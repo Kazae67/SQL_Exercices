@@ -32,7 +32,15 @@ FROM villes_france_free
 LEFT JOIN departement ON departement_code = ville_departement
 GROUP BY ville_departement
 ORDER BY communes DESC
+
 /* 6. Obtenir la liste des 10 plus grands départements, en terme de superficie */
+SELECT departement_nom AS nom, ville_departement AS département, SUM(ville_surface) AS surface
+FROM villes_france_free
+LEFT JOIN departement ON departement_id = ville_departement
+GROUP BY ville_departement  
+ORDER BY surface  DESC
+LIMIT 10
+
 
 /* 7. Compter le nombre de villes dont le nom commence par “Saint” */
 
