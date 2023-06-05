@@ -41,8 +41,11 @@ GROUP BY ville_departement
 ORDER BY surface  DESC
 LIMIT 10
 
-
 /* 7. Compter le nombre de villes dont le nom commence par “Saint” */
+SELECT COUNT(ville_nom) AS nombre
+FROM villes_france_free 
+WHERE ville_nom LIKE 'saint%'
+
 
 /* 8. Obtenir la liste des villes qui ont un nom existants plusieurs fois, et trier afin d’obtenir en premier celles dont le nom est le plus souvent utilisé par plusieurs communes */
 
