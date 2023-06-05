@@ -59,6 +59,11 @@ WHERE ville_surface > (SELECT AVG(ville_surface)
 FROM villes_france_free)
 
 /* 10. Obtenir la liste des départements qui possèdent plus de 2 millions d’habitants */
+SELECT ville_departement AS nombre_de_ville, SUM(ville_population_2012) AS nombre_population_2012
+FROM villes_france_free
+GROUP BY ville_departement
+HAVING nombre_population_2012 >= 2000000
+ORDER BY nombre_population_2012 DESC
 
 /* 11. Remplacez les tirets par un espace vide, pour toutes les villes commençant par “SAINT-” (dans la colonne qui contient les noms en majuscule) */
 
