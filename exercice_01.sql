@@ -66,4 +66,6 @@ HAVING nombre_population_2012 >= 2000000
 ORDER BY nombre_population_2012 DESC
 
 /* 11. Remplacez les tirets par un espace vide, pour toutes les villes commençant par “SAINT-” (dans la colonne qui contient les noms en majuscule) */
-
+UPDATE villes_france_free
+SET ville_nom = REPLACE(ville_nom, '-', ' ') 
+WHERE ville_nom LIKE 'SAINT-%'
