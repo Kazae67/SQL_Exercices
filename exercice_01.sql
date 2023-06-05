@@ -46,8 +46,11 @@ SELECT COUNT(ville_nom) AS nombre
 FROM villes_france_free 
 WHERE ville_nom LIKE 'saint%'
 
-
 /* 8. Obtenir la liste des villes qui ont un nom existants plusieurs fois, et trier afin d’obtenir en premier celles dont le nom est le plus souvent utilisé par plusieurs communes */
+SELECT ville_nom AS communes, COUNT(ville_nom) AS nombre_de_fois
+FROM villes_france_free 
+GROUP BY ville_nom
+ORDER BY nombre_de_fois DESC
 
 /* 9. Obtenir en une seule requête SQL la liste des villes dont la superficie est supérieur à la superficie moyenne*/
 
