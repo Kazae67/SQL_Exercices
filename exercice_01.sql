@@ -53,7 +53,7 @@ GROUP BY ville_nom
 ORDER BY nombre_de_fois DESC
 
 /* 9. Obtenir en une seule requête SQL la liste des villes dont la superficie est supérieur à la superficie moyenne*/
-SELECT *
+SELECT ville_nom AS nom, ville_surface AS surface
 FROM villes_france_free 
 WHERE ville_surface > (SELECT AVG(ville_surface) 
 FROM villes_france_free)
